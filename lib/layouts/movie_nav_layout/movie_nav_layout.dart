@@ -4,15 +4,11 @@ import 'package:flutter_movie_app/blocs/movie_bloc.dart';
 import 'package:flutter_movie_app/blocs/movie_states.dart';
 
 class MovieMainLayout extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<MovieAppCubit,MovieAppStates>(
-        listener: (context, state) {
-
-        },
+    return BlocBuilder<MovieAppCubit, MovieAppStates>(
       builder: (context, state) {
-          MovieAppCubit cubit = MovieAppCubit.get(context);
+        MovieAppCubit cubit = MovieAppCubit.get(context);
         return Scaffold(
           body: cubit.movieScreen[cubit.screenCurrentIdx],
           bottomNavigationBar: BottomNavigationBar(

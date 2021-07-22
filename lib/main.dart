@@ -24,23 +24,24 @@ class MyApp extends StatelessWidget {
         ..getNowPlayingMovies()
         ..getTopRatedMovies()
         ..getPopularMovies()
-        ..getUpComingMovies()
-      ,
+        ..getUpComingMovies(),
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Movie App',
-        darkTheme: darkTheme,
-        theme: lightTheme,
-        themeMode: ThemeMode.light,
-        home: AnimatedSplashScreen(
-          animationDuration: Duration(seconds: 10),
-          splash: 'assets/images/jk_logo.png',
-          splashIconSize: 250,
-          backgroundColor: Colors.black,
-          nextScreen: MovieMainLayout(),
-          splashTransition: SplashTransition.fadeTransition,
-        )
-      ),
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Movie App',
+          darkTheme: darkTheme,
+          theme: lightTheme,
+          themeMode: ThemeMode.light,
+
+          // TODO : use routes
+
+          home: AnimatedSplashScreen(
+            animationDuration: Duration(milliseconds: 3000),
+            splash: 'assets/images/jk_logo.png',
+            splashIconSize: 250,
+            backgroundColor: Colors.black,
+            nextScreen: MovieMainLayout(),
+            splashTransition: SplashTransition.fadeTransition,
+          )),
     );
   }
 }
